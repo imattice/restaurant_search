@@ -1,3 +1,13 @@
+body {
+    background-color: #246068;
+    color:#00171A;
+}
+
 a {
     cursor: pointer;
+}
+
+.main {
+    border: solid 2px #0B3B42;
+    border-radius: 10px;
 }

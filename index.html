@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="Bestaurants">
+
     <head>
         <title>Bestaurants!</title>
         <script src="lib/angular.js"></script>
@@ -8,6 +9,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css" type="text/css">
     </head>
+
+
+
     <body>
         <div class="container" ng-controller="RestaurantsCtrl">
             <div class="row" ng-show="restaurants.length">
@@ -16,12 +20,12 @@
 <!-- Search Function -->
                     <form class="form-inline" role="form">
                         <div class="form-group">
-                            <input ng-show="search == 'name'" ng-model="search.name" type="text" class="form-control" placeholder="Search">
-                            <input ng-show="search == 'location'" ng-model="search.location" type="text" class="form-control" placeholder="Search">
-                            <input ng-show="search == 'food_type'" ng-model="search.food_type" type="text" class="form-control" placeholder="Search">
+                            <input ng-model="search[selector]" type="text" class="form-control" placeholder="Search">
+                            <!-- <input ng-show="search_param == 'location'" ng-model="search.location" type="text" class="form-control" placeholder="Search">
+                            <input ng-show="search_param == 'food_type'" ng-model="search.food_type" type="text" class="form-control" placeholder="Search">
                         </div>
-                        <div class="form-group">
-                            <select class="form-control" name="search" id="searchBy" ng-model="search">
+                        <div class="form-group"> -->
+                            <select class="form-control" name="search_param" id="searchBy" ng-model="selector">
                                 <option value="name">Search by name</option>
                                 <option value="location">Search by location</option>
                                 <option value="food_type">Search by cuisine</option>
@@ -31,7 +35,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 main">
                     <h1>Best Restaurant Finder</h1>
 
 <!-- Display list of restaurants -->

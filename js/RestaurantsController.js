@@ -1,5 +1,5 @@
 Bestaurants.controller('RestaurantsCtrl', function RestaurantsCtrl($scope){
-    $scope.restaurants = [];
+    $scope.restaurants = [{name: 'Montage', location: '123 Main St.', food_type: 'Cajun'}, {name: 'Portland City Grill', location: '30th floor of the Pink Building', food_type: 'New American Dishes with an Asian Touch'}];
     $scope.addRestaurant = function() {
         $scope.restaurants.push({ name: $scope.name, location: $scope.location, food_type: $scope.foodType });
         $scope.name = null;
