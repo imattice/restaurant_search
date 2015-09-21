@@ -8,24 +8,22 @@
         <script src="js/RestaurantsController.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
     </head>
 
 
 
     <body>
         <div class="container" ng-controller="RestaurantsCtrl">
-            <div class="row" ng-show="restaurants.length">
+            <div class="row" id="search_bar" ng-show="restaurants.length">
                 <div class="col-md-12">
 
 <!-- Search Function -->
                     <form class="form-inline" role="form">
                         <div class="form-group">
+                            <label>Search restaurants:</label>
                             <input ng-model="search[selector]" type="text" class="form-control" placeholder="Search">
-                            <!-- <input ng-show="search_param == 'location'" ng-model="search.location" type="text" class="form-control" placeholder="Search">
-                            <input ng-show="search_param == 'food_type'" ng-model="search.food_type" type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <div class="form-group"> -->
-                            <select class="form-control" name="search_param" id="searchBy" ng-model="selector">
+                            <select ng-click="search = ''" class="form-control" name="search_param" id="searchBy" ng-model="selector">
                                 <option value="name">Search by name</option>
                                 <option value="location">Search by location</option>
                                 <option value="food_type">Search by cuisine</option>
@@ -44,10 +42,11 @@
                             <h5 ng-show='!restaurants.length && !filtered.length'>No restaurants listed.  Add some!</h5>
                             <h5 ng-show='restaurants.length && !filtered.length'>No matches found!</h5>
                             <li ng-repeat='restaurant in filtered = (restaurants | filter:search)'>
-                                {{restaurant.name}} <a ng-click='deleteRestaurant(restaurant)'><span id='delete'><img src="https://maxcdn.icons8.com/Color/PNG/24/Industry/trash-24.png" title="Trash" width="24"></span></a>
+                                <strong>{{restaurant.name}}</strong><a ng-click='deleteRestaurant(restaurant)'><img src="https://maxcdn.icons8.com/Color/PNG/24/Industry/trash-24.png" title="Trash" width="24"></a>
                                 <ul>
-                                    <li>{{restaurant.location}}</li>
-                                    <li>{{restaurant.food_type}}</li>
+                                    <li>Address: {{restaurant.location}}</li>
+                                    <li>Cuisine: {{restaurant.food_type}}</li>
+                                    <!-- <li>{{restaurant.image}}</li> -->
                                 </ul>
                             </li>
                         </ul>

@@ -1,6 +1,7 @@
 body {
     background-color: #246068;
     color:#00171A;
+    font-family: 'Raleway', sans-serif;
 }
 
 a {
@@ -8,6 +9,13 @@ a {
 }
 
 .main {
+    position: center;
     border: solid 2px #0B3B42;
     border-radius: 10px;
+    background-color: #66969D;
+    padding-bottom: 7%;
+}
+
+#search_bar {
+    text-align: right;
 }
